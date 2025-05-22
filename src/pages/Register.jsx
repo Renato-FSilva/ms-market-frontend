@@ -1,33 +1,146 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "./style.css";
+import "../styles/style.css";
+import logo from "../assets/undraw_shopping_bags.svg";
 
-export default function Registro() {
+const Register = () => {
   const navigate = useNavigate();
-  const [mensagem, setMensagem] = useState("");
+  const [formData, setFormData] = useState({
+    nome: "",
+    cnpj: "",
+    email: "",
+    celular: "",
+    senha: "",
+  });
 
-  const handleSubmit = (e) => {
+  const handleChange = (e) => {
+    setFormData((prev) => ({
+      ...prev,
+      [e.target.name]: e.target.value,
+    }));
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    // Suponha que o registro foi bem-sucedido
-    setMensagem("Cadastro realizado! Redirecionando para login...");
-    setTimeout(() => navigate("/"), 2000);
+
+    try {
+      const data = new FormData();
+      for (const key in formData) {
+        data.append(key, formData[key]);
+      }
+
+      const response = await fetch("http://localhost:5000/api/sellers", {
+        method: "POST",
+        body: data,
+      });
+
+      const result = await response.json();
+
+      if (response.ok) {
+        alert(result.mensagem);
+        navigate(result.redirect); // redireciona para tela de ativação
+      } else {
+        alert(result.erro || "Erro ao cadastrar.");
+      }
+    } catch (error) {
+      // <-- esse catch estava dentro do if!
+      console.error("Erro de conexão:", error);
+      alert("Erro de conexão com o servidor.");
+    }
   };
 
   return (
     <div className="container">
-      <h2>Cadastro</h2>
-      {mensagem && <div className="alert success">{mensagem}</div>}
+      <div className="form-image">
+        <img src={logo} alt="Logo" className="logo" />
+      </div>
 
-      <form onSubmit={handleSubmit}>
-        <input type="text" placeholder="Nome" required />
-        <input type="email" placeholder="E-mail" required />
-        <input type="password" placeholder="Senha" required />
-        <button type="submit">Registrar</button>
-      </form>
+      <div className="form">
+        <form onSubmit={handleSubmit}>
+          <div className="form-header">
+            <div className="title">
+              <h1>Cadastre-se</h1>
+            </div>
+            <div className="login-button">
+              <a href="/login" className="login-link">
+                Entrar
+              </a>
+            </div>
+          </div>
 
-      <div className="toggle-link">
-        Já tem conta? <a href="/">Entrar</a>
+          <div className="input-group">
+            <div className="input-box">
+              <label htmlFor="nome">Nome</label>
+              <input
+                id="nome"
+                name="nome"
+                type="text"
+                placeholder="Digite seu nome completo"
+                value={formData.nome}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <label htmlFor="cnpj">CNPJ</label>
+              <input
+                id="cnpj"
+                name="cnpj"
+                type="text"
+                placeholder="00.000.000/0000-00"
+                value={formData.cnpj}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <label htmlFor="email">Email</label>
+              <input
+                id="email"
+                name="email"
+                type="email"
+                placeholder="Digite seu Email"
+                value={formData.email}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <label htmlFor="celular">Celular</label>
+              <input
+                id="celular"
+                name="celular"
+                type="tel"
+                placeholder="(xx) xxxx-xxxx"
+                value={formData.celular}
+                onChange={handleChange}
+                required
+              />
+            </div>
+
+            <div className="input-box">
+              <label htmlFor="senha">Senha</label>
+              <input
+                id="senha"
+                name="senha"
+                type="password"
+                placeholder="Digite sua Senha"
+                value={formData.senha}
+                onChange={handleChange}
+                required
+              />
+            </div>
+          </div>
+
+          <div className="continue-button">
+            <button type="submit">Cadastrar</button>
+          </div>
+        </form>
       </div>
     </div>
   );
-}
+};
+export default Register;
