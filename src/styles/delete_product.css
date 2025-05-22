@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+body {
+  background-color: #140e87;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+header {
+  background-color: #fde3a7d7;
+  padding: 1.5rem 2rem;
+  text-align: center;
+  color: #140e87;
+  font-weight: 700;
+  font-size: 1.8rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+}
+
+.delete-section {
+  background-color: white;
+  padding: 30px;
+  border-radius: 16px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+  width: 100%;
+  max-width: 500px;
+  text-align: center;
+  color: #140e87;
+}
+
+.delete-section h2 {
+  margin-bottom: 20px;
+  font-weight: 700;
+}
+
+.delete-section p {
+  margin: 8px 0;
+  font-weight: 600;
+}
+
+.actions {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 24px;
+  border: none;
+  border-radius: 12px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  text-decoration: none;
+  display: inline-block;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+.delete-btn {
+  background-color: #e63946;
+  color: white;
+}
+
+.delete-btn:hover {
+  background-color: #d62828;
+}
+
+.cancel-btn {
+  background-color: #fde3a7d7;
+  color: #140e87;
+}
+
+.cancel-btn:hover {
+  background-color: #fbdc8c;
+}
+
+footer {
+  background-color: #fde3a7d7;
+  color: #140e87;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+}
