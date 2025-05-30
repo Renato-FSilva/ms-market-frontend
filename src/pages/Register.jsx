@@ -1,6 +1,6 @@
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import "../styles/style.css";
+import "../styles/register.css";
 import logo from "../assets/undraw_shopping_bags.svg";
 
 const Register = () => {
