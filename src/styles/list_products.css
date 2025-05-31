@@ -1,20 +1,9 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap");
-
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
+.list-products-page {
+  display: grid;
+  height: 100%;
 }
 
-body {
-  background-color: #140e87;
-  color: #fff;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-}
-
+ 
 header {
   background-color: #fde3a7d7;
   padding: 1.5rem 2rem;
@@ -88,4 +77,5 @@ footer {
   text-align: center;
   padding: 1rem;
   font-size: 0.9rem;
+  align-self: self-end;
 }

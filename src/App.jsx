@@ -6,6 +6,8 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Ativacao from "./pages/Activate";
 import Home from "./pages/Home";
+import "./App.css"
+
 
 // Páginas de produtos
 import CreateProduct from "./pages/CreateProduct";

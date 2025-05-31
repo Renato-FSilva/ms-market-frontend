@@ -1,27 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
-
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: "Inter", sans-serif;
-}
-
-body {
-  width: 100%;
-  height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: #140e87;
-}
-
 .container {
   width: 400px;
   padding: 2.5rem;
   display: flex;
-  justify-content: center;
-  align-items: center;
   background: #fff;
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
@@ -40,7 +20,7 @@ h2 {
 }
 
 .input-box {
-  width: 100%;
+  width: 100px;
   margin-bottom: 1.2rem;
 }
 
@@ -88,4 +68,5 @@ h2 {
 #message {
   margin-top: 1rem;
   font-weight: bold;
+  color: rgb(11, 0, 163);
 }

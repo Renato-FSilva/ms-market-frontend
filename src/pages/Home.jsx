@@ -11,8 +11,8 @@ const Home = () => {
 
       <main>
         <div className="content">
-          <p>Bem-vindo ao sistema de gerenciamento do seu mercado.</p>
-          <p>Use o menu abaixo para acessar as funcionalidades:</p>
+          <p className="TextoHome">Bem-vindo ao sistema de gerenciamento do seu mercado.</p>
+          <p className="TextoHome">Use o menu abaixo para acessar as funcionalidades:</p>
 
           <div className="product-actions">
             <Link to="/produtos/cadastrar" className="btn">
