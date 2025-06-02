@@ -14,6 +14,7 @@ import CreateProduct from "./pages/CreateProduct";
 import ListProducts from "./pages/ListProducts";
 import EditProduct from "./pages/EditProduct";
 import DeleteProduct from "./pages/DeleteProduct";
+import Sale from "./pages/Sale";
 
 function App() {
   return (
@@ -30,6 +31,7 @@ function App() {
         <Route path="/produtos" element={<ListProducts />} />
         <Route path="/produtos/editar/:id" element={<EditProduct />} />
         <Route path="/produtos/excluir/:id" element={<DeleteProduct />} />
+        <Route path="/vender" element={<Sale />} />
       </Routes>
     </Router>
   );
