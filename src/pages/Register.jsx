@@ -3,14 +3,11 @@ import { useState } from "react";
 import "../styles/register.css";
 import logo from "../assets/undraw_shopping_bags.svg";
 
-const validateEmail = (email) =>
-  /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+const validateEmail = (email) => /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
 
-const validateCNPJ = (cnpj) =>
-  /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(cnpj);
+const validateCNPJ = (cnpj) => /^\d{2}\.\d{3}\.\d{3}\/\d{4}-\d{2}$/.test(cnpj);
 
-const validatePassword = (senha) =>
-  senha.length >= 6;
+const validatePassword = (senha) => senha.length >= 6;
 
 const Register = () => {
   const navigate = useNavigate();
@@ -40,7 +37,8 @@ const Register = () => {
     if (!validateCNPJ(formData.cnpj)) newErrors.cnpj = "CNPJ inválido";
     if (!validateEmail(formData.email)) newErrors.email = "Email inválido";
     if (!formData.celular) newErrors.celular = "Celular obrigatório";
-    if (!validatePassword(formData.senha)) newErrors.senha = "Senha deve ter pelo menos 6 caracteres";
+    if (!validatePassword(formData.senha))
+      newErrors.senha = "Senha deve ter pelo menos 6 caracteres";
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
   };
@@ -66,15 +64,15 @@ const Register = () => {
       const result = await response.json();
 
       if (response.ok) {
-        setServerMsg({ type: "success", text: result.mensagem });
-        setTimeout(() => navigate(result.redirect), 1500);
+        alert(result.mensagem);
+        navigate(result.redirect); // redireciona para tela de ativação
       } else {
-        setServerMsg({ type: "error", text: result.erro || "Erro ao cadastrar." });
+        alert(result.erro || "Erro ao cadastrar.");
       }
     } catch (error) {
-      setServerMsg({ type: "error", text: "Erro de conexão com o servidor." });
-    } finally {
-      setLoading(false);
+      // <-- esse catch estava dentro do if!
+      console.error("Erro de conexão:", error);
+      alert("Erro de conexão com o servidor.");
     }
   };
 
@@ -121,7 +119,11 @@ const Register = () => {
                 aria-invalid={!!errors.nome}
                 aria-describedby="erro-nome"
               />
-              {errors.nome && <span id="erro-nome" className="error">{errors.nome}</span>}
+              {errors.nome && (
+                <span id="erro-nome" className="error">
+                  {errors.nome}
+                </span>
+              )}
             </div>
 
             <div className="input-box">
@@ -137,7 +139,11 @@ const Register = () => {
                 aria-invalid={!!errors.cnpj}
                 aria-describedby="erro-cnpj"
               />
-              {errors.cnpj && <span id="erro-cnpj" className="error">{errors.cnpj}</span>}
+              {errors.cnpj && (
+                <span id="erro-cnpj" className="error">
+                  {errors.cnpj}
+                </span>
+              )}
             </div>
 
             <div className="input-box">
@@ -153,7 +159,11 @@ const Register = () => {
                 aria-invalid={!!errors.email}
                 aria-describedby="erro-email"
               />
-              {errors.email && <span id="erro-email" className="error">{errors.email}</span>}
+              {errors.email && (
+                <span id="erro-email" className="error">
+                  {errors.email}
+                </span>
+              )}
             </div>
 
             <div className="input-box">
@@ -169,7 +179,11 @@ const Register = () => {
                 aria-invalid={!!errors.celular}
                 aria-describedby="erro-celular"
               />
-              {errors.celular && <span id="erro-celular" className="error">{errors.celular}</span>}
+              {errors.celular && (
+                <span id="erro-celular" className="error">
+                  {errors.celular}
+                </span>
+              )}
             </div>
 
             <div className="input-box">
@@ -185,7 +199,11 @@ const Register = () => {
                 aria-invalid={!!errors.senha}
                 aria-describedby="erro-senha"
               />
-              {errors.senha && <span id="erro-senha" className="error">{errors.senha}</span>}
+              {errors.senha && (
+                <span id="erro-senha" className="error">
+                  {errors.senha}
+                </span>
+              )}
             </div>
           </div>
 

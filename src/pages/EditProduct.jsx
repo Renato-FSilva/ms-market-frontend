@@ -14,7 +14,7 @@ const EditProduct = () => {
   });
 
   useEffect(() => {
-    fetch(`/api/products/${id}`, {
+    fetch(`http://localhost:5000/api/products/${id}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },

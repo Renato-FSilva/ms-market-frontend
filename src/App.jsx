@@ -6,8 +6,7 @@ import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Ativacao from "./pages/Activate";
 import Home from "./pages/Home";
-import "./App.css"
-
+import "./App.css";
 
 // Páginas de produtos
 import CreateProduct from "./pages/CreateProduct";
@@ -28,7 +27,7 @@ function App() {
         {/* Rotas de produtos */}
         <Route path="/produtos/cadastrar" element={<CreateProduct />} />
         <Route path="/produtos" element={<ListProducts />} />
-        <Route path="/produtos/editar/:id" element={<EditProduct />} />
+        <Route path="/edit-product/:id" element={<EditProduct />} />
         <Route path="/produtos/excluir/:id" element={<DeleteProduct />} />
       </Routes>
     </Router>

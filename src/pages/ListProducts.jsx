@@ -4,7 +4,7 @@ import "../styles/list_products.css";
 
 const ProductList = () => {
   const [products, setProducts] = useState([]);
-
+  const [loading, setLoading] = useState(true);
   const loadProducts = async () => {
     try {
       const response = await fetch("http://localhost:5000/api/products", {
@@ -19,6 +19,8 @@ const ProductList = () => {
     } catch (error) {
       console.error("Erro ao carregar os produtos:", error);
       alert("Erro ao carregar os produtos");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -50,6 +52,15 @@ const ProductList = () => {
   useEffect(() => {
     loadProducts();
   }, []);
+
+  if (loading) {
+    return (
+      <div className="loading-container">
+        <div className="spinner"></div>
+        <p>Carregando produtos...</p>
+      </div>
+    );
+  }
 
   return (
     <div className="product-list-page">
@@ -92,7 +103,10 @@ const ProductList = () => {
                       />
                     </td>
                     <td>
-                      <Link to={`/edit-product/${product.id}`} className="btn-edit">
+                      <Link
+                        to={`/edit-product/${product.id}`}
+                        className="btn-edit"
+                      >
                         Editar
                       </Link>{" "}
                       |{" "}

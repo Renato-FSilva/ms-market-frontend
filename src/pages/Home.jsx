@@ -11,8 +11,12 @@ const Home = () => {
 
       <main>
         <div className="content">
-          <p className="TextoHome">Bem-vindo ao sistema de gerenciamento do seu mercado.</p>
-          <p className="TextoHome">Use o menu abaixo para acessar as funcionalidades:</p>
+          <p className="TextoHome">
+            Bem-vindo ao sistema de gerenciamento do seu mercado.
+          </p>
+          <p className="TextoHome">
+            Use o menu abaixo para acessar as funcionalidades:
+          </p>
 
           <div className="product-actions">
             <Link to="/produtos/cadastrar" className="btn">
@@ -20,12 +24,6 @@ const Home = () => {
             </Link>
             <Link to="/produtos" className="btn">
               Listar Produtos
-            </Link>
-            <Link to="/produtos/editar" className="btn">
-              Editar Produto
-            </Link>
-            <Link to="/produtos/excluir" className="btn">
-              Excluir Produto
             </Link>
           </div>
         </div>
