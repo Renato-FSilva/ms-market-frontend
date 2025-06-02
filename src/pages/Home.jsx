@@ -21,12 +21,6 @@ const Home = () => {
             <Link to="/produtos" className="btn">
               Listar Produtos
             </Link>
-            <Link to="/produtos/editar" className="btn">
-              Editar Produto
-            </Link>
-            <Link to="/produtos/excluir" className="btn">
-              Excluir Produto
-            </Link>
           </div>
         </div>
       </main>

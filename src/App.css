@@ -12,4 +12,5 @@ body {
   background: #140e87;
   display: grid;
   justify-content: center;
+  overflow-x: hidden;
 }
