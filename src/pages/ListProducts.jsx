@@ -92,7 +92,10 @@ const ProductList = () => {
                       />
                     </td>
                     <td>
-                      <Link to={`/edit_product/${product.id}`} className="btn-edit">
+                      <Link
+                        to={`/produtos/editar/${product.id}`}
+                        className="btn-edit"
+                      >
                         Editar
                       </Link>
                       <button

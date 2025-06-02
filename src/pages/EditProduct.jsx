@@ -9,8 +9,8 @@ const EditProduct = () => {
     name: "",
     price: "",
     quantity: "",
-    status: "Ativo",
     image_url: "",
+    status: "Ativo",
   });
 
   useEffect(() => {
