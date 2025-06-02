@@ -21,6 +21,9 @@ const Home = () => {
             <Link to="/produtos" className="btn">
               Listar Produtos
             </Link>
+            <Link to="/vender" className="btn">
+              Efetuar Venda
+            </Link>
           </div>
         </div>
       </main>

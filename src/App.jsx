@@ -30,7 +30,6 @@ function App() {
         <Route path="/produtos" element={<ListProducts />} />
         <Route path="/produtos/editar/:id" element={<EditProduct />} />
         <Route path="/produtos/excluir/:id" element={<DeleteProduct />} />
-        <Route path="/edit_product/:id" element={<EditProduct />} />
       </Routes>
     </Router>
   );

@@ -4,11 +4,9 @@
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
-    margin-top: 50px;
-    margin-bottom: 50px;
-    max-width: 1200px;
-    border-radius: 10px;
-    margin-left: 10%;
+    margin-top: 100px;
+    margin-bottom: 100px;
+    margin-left: 12%;
 }
 
 .form-image {
@@ -253,6 +251,11 @@
   align-items: center;
   justify-content: center;
 }
+
+.main-footer p {
+  margin: 4px 0;
+}
+
 /* Responsividade para garantir centralização */
 @media screen and (max-width: 1330px) {
   .container {
