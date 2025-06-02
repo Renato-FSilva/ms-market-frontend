@@ -1,13 +1,12 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import "../styles/sale.css";
 
 const Sale = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        productId: "",
-        sellerId: "",
-        quantity: "",
-        salePrice: ""
+        product_id: "",
+        quantity: ""
     });
 
     const handleChange = (e) => {
@@ -53,24 +52,12 @@ const Sale = () => {
                 <section className="form-section">
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="productId">ID do Produto:</label>
+                            <label htmlFor="product_id">ID do Produto:</label>
                             <input
                                 type="text"
-                                id="productId"
-                                name="productId"
-                                value={formData.productId}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="sellerId">ID do Vendedor:</label>
-                            <input
-                                type="text"
-                                id="sellerId"
-                                name="sellerId"
-                                value={formData.sellerId}
+                                id="product_id"
+                                name="product_id"
+                                value={formData.product_id}
                                 onChange={handleChange}
                                 required
                             />
@@ -101,6 +88,9 @@ const Sale = () => {
                         </div>
 
                         <button type="submit">Efetuar Venda</button>
+                        <button className="submit" type="submit" onClick={handleSubmit}>
+                            Efetuar Venda
+                        </button>
                     </form>
                 </section>
             </main>
