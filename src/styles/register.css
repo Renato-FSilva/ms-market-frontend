@@ -1,11 +1,11 @@
-
-
 .container {
-    background-color: red;
+    background-color: #140e87;
     width: 80%;
     height: 80vh;
     display: flex;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
+    margin-top: 100px;
+    margin-bottom: 100px;
 }
 
 .form-image {
@@ -36,6 +36,15 @@
     display: flex;
     justify-content: space-between;
 }
+
+.login-link {
+    text-decoration: none;
+    background-color: #140e87;
+    color: #fff;
+    padding: 0.4rem 1rem;
+    border-radius: 5px;
+}
+
 
 .login-button {
     display: flex;

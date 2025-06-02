@@ -55,11 +55,7 @@ const Activate = () => {
             <div className="title">
               <h1>Ativar Conta</h1>
             </div>
-            <div className="login-button">
-              <a href="/login" className="login-link">
-                Entrar
-              </a>
-            </div>
+
           </div>
 
           <div className="input-group">

@@ -8,6 +8,7 @@ const Login = () => {
   const [email, setEmail] = useState("");
   const [senha, setSenha] = useState("");
   const [message, setMessage] = useState("");
+  const [messageType, setMessageType] = useState(""); // "success" ou "error"
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -26,16 +27,19 @@ const Login = () => {
       if (response.ok) {
         localStorage.setItem("token", result.access_token);
         setMessage("Login realizado com sucesso!");
+        setMessageType("success");
 
         setTimeout(() => {
-          navigate("/home"); // Redireciona para a página Home
+          navigate("/home");
         }, 1000);
       } else {
         setMessage(result.erro || "Erro ao realizar login.");
+        setMessageType("error");
       }
     } catch (error) {
       console.error("Erro de conexão:", error);
       setMessage("Erro de conexão com o servidor.");
+      setMessageType("error");
     }
   };
 
@@ -68,11 +72,16 @@ const Login = () => {
             />
           </div>
 
-          <div className="continue-button">
+          <div className="continue-button-login">
             <button type="submit">Entrar</button>
           </div>
         </form>
-        <p id="message">{message}</p>
+
+        {message && (
+          <p id="message" className={messageType === "success" ? "success" : "error"}>
+            {message}
+          </p>
+        )}
       </div>
     </div>
   );
