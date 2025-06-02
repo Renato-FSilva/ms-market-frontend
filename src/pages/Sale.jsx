@@ -75,18 +75,6 @@ const Sale = () => {
                             />
                         </div>
 
-                        <div className="form-group">
-                            <label htmlFor="salePrice">Preço de Venda:</label>
-                            <input
-                                type="number"
-                                id="salePrice"
-                                name="salePrice"
-                                value={formData.salePrice}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
                         <button type="submit">Efetuar Venda</button>
                         <button className="submit" type="submit" onClick={handleSubmit}>
                             Efetuar Venda
