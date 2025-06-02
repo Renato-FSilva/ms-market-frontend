@@ -6,6 +6,7 @@
     box-shadow: 5px 5px 10px rgba(0, 0, 0, .212);
     margin-top: 100px;
     margin-bottom: 100px;
+    margin-left: 12%;
 }
 
 .form-image {
@@ -201,4 +202,78 @@
     .gender-input {
         margin-top: 0.5rem;
     }
+}
+
+.main-header {
+  width: 100%;
+  background: #fde3a7d7;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0.7rem 2rem;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 10;
+  box-shadow: 0 2px 8px #0002;
+}
+
+.header-logo {
+  height: 38px;
+  margin-right: 18px;
+}
+
+.header-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+/* Espaço para o header fixo */
+.container {
+  margin-top: 80px;
+}
+
+.main-footer {
+  width: 100vw;
+  background: #e2ccb0;
+  color: #140e87;
+  text-align: center;
+  padding: 18px 0 10px 0;
+  font-size: 1rem;
+  margin-top: 32px;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0 -2px 8px #0002;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.main-footer p {
+  margin: 4px 0;
+}
+
+/* Responsividade para garantir centralização */
+@media screen and (max-width: 1330px) {
+  .container {
+    width: 90%;
+    margin-top: 80px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .main-header {
+    flex-direction: column;
+    padding: 0.5rem 1rem;
+    text-align: center;
+  }
+  .header-logo {
+    margin-bottom: 8px;
+  }
+  .container {
+    margin-top: 90px;
+  }
 }

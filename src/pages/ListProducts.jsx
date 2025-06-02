@@ -58,7 +58,7 @@ const ProductList = () => {
       </header>
 
       <main>
-        <div className="content">
+        <div className="content-products">
           <table id="productsTable">
             <thead>
               <tr>
@@ -88,14 +88,13 @@ const ProductList = () => {
                       <img
                         src={product.image_url}
                         alt={product.name}
-                        width="50"
+                        width="70"
                       />
                     </td>
                     <td>
-                      <Link to={`/edit-product/${product.id}`} className="btn-edit">
+                      <Link to={`/edit_product/${product.id}`} className="btn-edit">
                         Editar
-                      </Link>{" "}
-                      |{" "}
+                      </Link>
                       <button
                         onClick={() => deleteProduct(product.id)}
                         className="btn-delete"

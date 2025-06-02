@@ -1,4 +1,4 @@
-.container {
+.container-login {
   width: 400px;
   padding: 100px;
   display: grid;
@@ -6,10 +6,10 @@
   border-radius: 10px;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
   justify-content: center;
-  margin-top: 100px;
+  margin-top: 150px;
 }
 
-.form {
+.form-login {
   width: 100%;
   display: flex;
   flex-direction: column;

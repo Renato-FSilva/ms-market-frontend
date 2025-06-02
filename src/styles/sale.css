@@ -1,3 +1,8 @@
+.sales-page {
+  display: grid;
+  height: 100%;
+}
+
 header {
   background-color: #fde3a7d7;
   color: #140e87;
@@ -74,7 +79,7 @@ select:focus {
 }
 
 footer {
-  background-color: #fde3a7d7;
+  background-color: #805e0fd7;
   color: #140e87;
   text-align: center;
   padding: 20px;

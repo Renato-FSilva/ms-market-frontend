@@ -1,9 +1,57 @@
-.list-products-page {
+.product-list-page {
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #140e87;
+  min-height: 100vh;
   display: grid;
-  height: 100%;
+  flex-direction: column;
 }
 
- 
+main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 8px 0 32px 0; /* diminui o padding superior para aproximar do header */
+}
+
+.content-products {
+  background: #fff;
+  border-radius: 10px;
+  box-shadow: 0 2px 12px #0002;
+  padding: 32px;
+  min-width: 900px;
+  margin-top: 0; /* garante que não tenha espaço extra acima */
+}
+
+#productsTable {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 8px;
+}
+
+#productsTable th,
+#productsTable td {
+  padding: 12px 10px;
+  border-bottom: 1px solid #e0e0e0;
+  text-align: center;
+}
+
+#productsTable th {
+  background: #fde3a7d7;
+  color: #444;
+  font-weight: 600;
+}
+
+#productsTable tr:last-child td {
+  border-bottom: none;
+}
+
+#productsTable img {
+  border-radius: 6px;
+  box-shadow: 0 1px 4px #0001;
+  object-fit: cover;
+}
+
 header {
   background-color: #fde3a7d7;
   padding: 1.5rem 2rem;
@@ -14,6 +62,29 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
+.btn-edit,
+.btn-delete {
+  min-width: 90px;      /* largura mínima igual para ambos */
+  height: 38px;         /* altura igual para ambos */
+  display: inline-block;
+  margin-right: 8px;
+  margin-left: 0;
+  vertical-align: middle;
+  text-align: center;
+  padding: 6px 0;       /* padding vertical, horizontal será pelo min-width */
+  font-size: 1rem;
+  font-weight: 600;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  box-sizing: border-box;
+}
+
+.btn-delete {
+  margin-right: 0;
+}
 main {
   flex: 1;
   padding: 2rem;
@@ -78,4 +149,39 @@ footer {
   padding: 1rem;
   font-size: 0.9rem;
   align-self: self-end;
+}
+
+.btn-edit {
+  background-color: #ff9800 !important; /* laranja */
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+  margin-right: 8px;
+}
+
+.btn-edit:hover,
+.btn-edit:focus {
+  background-color: #fb8c00 !important;
+}
+
+.btn-delete {
+  background-color: #e53935 !important; /* vermelho */
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+
+.btn-delete:hover,
+.btn-delete:focus {
+  background-color: #b71c1c !important;
 }

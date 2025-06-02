@@ -79,125 +79,138 @@ const Register = () => {
   };
 
   return (
-    <div className="container">
-      <div className="form-image">
-        <img src={logo} alt="Logo" className="logo" />
+    <>
+      {/* Header */}
+      <header className="main-header">
+        <img src={logo} alt="Logo" className="header-logo" />
+        <span className="header-title">MS Market</span>
+      </header>
+
+      <div className="container">
+        <div className="form-image">
+          <img src={logo} alt="Logo" className="logo" />
+        </div>
+
+        <div className="form">
+          <form onSubmit={handleSubmit} aria-label="Formulário de cadastro">
+            <div className="form-header">
+              <div className="title">
+                <h1>Cadastre-se</h1>
+              </div>
+              <div className="login-button-to-login">
+                <a href="/login" className="login-link">
+                  Entrar
+                </a>
+              </div>
+            </div>
+
+            {serverMsg && (
+              <div
+                className={`server-msg ${serverMsg.type}`}
+                role={serverMsg.type === "error" ? "alert" : "status"}
+                style={{ marginBottom: 10 }}
+              >
+                {serverMsg.text}
+              </div>
+            )}
+
+            <div className="input-group">
+              <div className="input-box">
+                <label htmlFor="nome">Nome</label>
+                <input
+                  id="nome"
+                  name="nome"
+                  type="text"
+                  placeholder="Digite seu nome completo"
+                  value={formData.nome}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={!!errors.nome}
+                  aria-describedby="erro-nome"
+                />
+                {errors.nome && <span id="erro-nome" className="error">{errors.nome}</span>}
+              </div>
+
+              <div className="input-box">
+                <label htmlFor="cnpj">CNPJ</label>
+                <input
+                  id="cnpj"
+                  name="cnpj"
+                  type="text"
+                  placeholder="00.000.000/0000-00"
+                  value={formData.cnpj}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={!!errors.cnpj}
+                  aria-describedby="erro-cnpj"
+                />
+                {errors.cnpj && <span id="erro-cnpj" className="error">{errors.cnpj}</span>}
+              </div>
+
+              <div className="input-box">
+                <label htmlFor="email">Email</label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  placeholder="Digite seu Email"
+                  value={formData.email}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={!!errors.email}
+                  aria-describedby="erro-email"
+                />
+                {errors.email && <span id="erro-email" className="error">{errors.email}</span>}
+              </div>
+
+              <div className="input-box">
+                <label htmlFor="celular">Celular</label>
+                <input
+                  id="celular"
+                  name="celular"
+                  type="tel"
+                  placeholder="(xx) xxxx-xxxx"
+                  value={formData.celular}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={!!errors.celular}
+                  aria-describedby="erro-celular"
+                />
+                {errors.celular && <span id="erro-celular" className="error">{errors.celular}</span>}
+              </div>
+
+              <div className="input-box">
+                <label htmlFor="senha">Senha</label>
+                <input
+                  id="senha"
+                  name="senha"
+                  type="password"
+                  placeholder="Digite sua Senha"
+                  value={formData.senha}
+                  onChange={handleChange}
+                  required
+                  aria-invalid={!!errors.senha}
+                  aria-describedby="erro-senha"
+                />
+                {errors.senha && <span id="erro-senha" className="error">{errors.senha}</span>}
+              </div>
+            </div>
+
+            <div className="continue-button">
+              <button type="submit" disabled={loading}>
+                {loading ? "Cadastrando..." : "Cadastrar"}
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
 
-      <div className="form">
-        <form onSubmit={handleSubmit} aria-label="Formulário de cadastro">
-          <div className="form-header">
-            <div className="title">
-              <h1>Cadastre-se</h1>
-            </div>
-            <div className="login-button-to-login">
-              <a href="/login" className="login-link">
-                Entrar
-              </a>
-            </div>
-          </div>
-
-          {serverMsg && (
-            <div
-              className={`server-msg ${serverMsg.type}`}
-              role={serverMsg.type === "error" ? "alert" : "status"}
-              style={{ marginBottom: 10 }}
-            >
-              {serverMsg.text}
-            </div>
-          )}
-
-          <div className="input-group">
-            <div className="input-box">
-              <label htmlFor="nome">Nome</label>
-              <input
-                id="nome"
-                name="nome"
-                type="text"
-                placeholder="Digite seu nome completo"
-                value={formData.nome}
-                onChange={handleChange}
-                required
-                aria-invalid={!!errors.nome}
-                aria-describedby="erro-nome"
-              />
-              {errors.nome && <span id="erro-nome" className="error">{errors.nome}</span>}
-            </div>
-
-            <div className="input-box">
-              <label htmlFor="cnpj">CNPJ</label>
-              <input
-                id="cnpj"
-                name="cnpj"
-                type="text"
-                placeholder="00.000.000/0000-00"
-                value={formData.cnpj}
-                onChange={handleChange}
-                required
-                aria-invalid={!!errors.cnpj}
-                aria-describedby="erro-cnpj"
-              />
-              {errors.cnpj && <span id="erro-cnpj" className="error">{errors.cnpj}</span>}
-            </div>
-
-            <div className="input-box">
-              <label htmlFor="email">Email</label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                placeholder="Digite seu Email"
-                value={formData.email}
-                onChange={handleChange}
-                required
-                aria-invalid={!!errors.email}
-                aria-describedby="erro-email"
-              />
-              {errors.email && <span id="erro-email" className="error">{errors.email}</span>}
-            </div>
-
-            <div className="input-box">
-              <label htmlFor="celular">Celular</label>
-              <input
-                id="celular"
-                name="celular"
-                type="tel"
-                placeholder="(xx) xxxx-xxxx"
-                value={formData.celular}
-                onChange={handleChange}
-                required
-                aria-invalid={!!errors.celular}
-                aria-describedby="erro-celular"
-              />
-              {errors.celular && <span id="erro-celular" className="error">{errors.celular}</span>}
-            </div>
-
-            <div className="input-box">
-              <label htmlFor="senha">Senha</label>
-              <input
-                id="senha"
-                name="senha"
-                type="password"
-                placeholder="Digite sua Senha"
-                value={formData.senha}
-                onChange={handleChange}
-                required
-                aria-invalid={!!errors.senha}
-                aria-describedby="erro-senha"
-              />
-              {errors.senha && <span id="erro-senha" className="error">{errors.senha}</span>}
-            </div>
-          </div>
-
-          <div className="continue-button">
-            <button type="submit" disabled={loading}>
-              {loading ? "Cadastrando..." : "Cadastrar"}
-            </button>
-          </div>
-        </form>
-      </div>
-    </div>
+      {/* Footer */}
+      <footer className="main-footer">
+        <p>© 2025 MS Market. Todos os direitos reservados.</p>
+        <p>Contato: contato@msmarket.com | (11) 99999-9999</p>
+      </footer>
+    </>
   );
 };
 export default Register;
-// ...adicione estilos para .error e .server-msg no seu CSS...

@@ -9,12 +9,12 @@ const EditProduct = () => {
     name: "",
     price: "",
     quantity: "",
-    image_url: "",
     status: "Ativo",
+    image_url: "",
   });
 
   useEffect(() => {
-    fetch(`/api/products/${id}`, {
+    fetch(`http://localhost:5000/api/products/${id}`, {
       headers: {
         Authorization: "Bearer " + localStorage.getItem("token"),
       },
