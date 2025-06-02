@@ -75,7 +75,6 @@ const Sale = () => {
                             />
                         </div>
 
-                        <button type="submit">Efetuar Venda</button>
                         <button className="submit" type="submit" onClick={handleSubmit}>
                             Efetuar Venda
                         </button>
