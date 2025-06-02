@@ -74,7 +74,7 @@ const Sale = () => {
                             />
                         </div>
 
-                        <button type="submit" onClick={handleSubmit}>
+                        <button className="submit" type="submit" onClick={handleSubmit}>
                             Efetuar Venda
                         </button>
                     </form>
