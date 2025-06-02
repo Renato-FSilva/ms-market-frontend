@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from "react";
 import {useNavigate} from "react-router-dom";
+import "../styles/sale.css";
 
 const Sale = () => {
     const navigate = useNavigate();
