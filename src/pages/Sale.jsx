@@ -4,10 +4,10 @@ import {useNavigate} from "react-router-dom";
 const Sale = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        productId: "",
-        sellerId: "",
+        product_id: "",
+        seller_id: "",
         quantity: "",
-        salePrice: ""
+        sale_price: ""
     });
 
     const handleChange = (e) => {
@@ -53,24 +53,24 @@ const Sale = () => {
                 <section className="form-section">
                     <form onSubmit={handleSubmit}>
                         <div className="form-group">
-                            <label htmlFor="productId">ID do Produto:</label>
+                            <label htmlFor="product_id">ID do Produto:</label>
                             <input
                                 type="text"
-                                id="productId"
-                                name="productId"
-                                value={formData.productId}
+                                id="product_id"
+                                name="product_id"
+                                value={formData.product_id}
                                 onChange={handleChange}
                                 required
                             />
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="sellerId">ID do Vendedor:</label>
+                            <label htmlFor="seller_id">ID do Vendedor:</label>
                             <input
                                 type="text"
-                                id="sellerId"
-                                name="sellerId"
-                                value={formData.sellerId}
+                                id="seller_id"
+                                name="seller_id"
+                                value={formData.seller_id}
                                 onChange={handleChange}
                                 required
                             />
@@ -89,12 +89,12 @@ const Sale = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="salePrice">Preço de Venda:</label>
+                            <label htmlFor="sale_price">Preço de Venda:</label>
                             <input
                                 type="number"
-                                id="salePrice"
-                                name="salePrice"
-                                value={formData.salePrice}
+                                id="sale_price"
+                                name="sale_price"
+                                value={formData.sale_price}
                                 onChange={handleChange}
                                 required
                             />
