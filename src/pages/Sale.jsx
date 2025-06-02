@@ -5,9 +5,7 @@ const Sale = () => {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         product_id: "",
-        seller_id: "",
-        quantity: "",
-        sale_price: ""
+        quantity: ""
     });
 
     const handleChange = (e) => {
@@ -65,36 +63,12 @@ const Sale = () => {
                         </div>
 
                         <div className="form-group">
-                            <label htmlFor="seller_id">ID do Vendedor:</label>
-                            <input
-                                type="text"
-                                id="seller_id"
-                                name="seller_id"
-                                value={formData.seller_id}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
                             <label htmlFor="quantity">Quantidade:</label>
                             <input
                                 type="number"
                                 id="quantity"
                                 name="quantity"
                                 value={formData.quantity}
-                                onChange={handleChange}
-                                required
-                            />
-                        </div>
-
-                        <div className="form-group">
-                            <label htmlFor="sale_price">Preço de Venda:</label>
-                            <input
-                                type="number"
-                                id="sale_price"
-                                name="sale_price"
-                                value={formData.sale_price}
                                 onChange={handleChange}
                                 required
                             />
