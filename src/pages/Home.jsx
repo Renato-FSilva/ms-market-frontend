@@ -27,6 +27,9 @@ const Home = () => {
             <Link to="/produtos/excluir" className="btn">
               Excluir Produto
             </Link>
+            <Link to="/vender" className="btn">
+              Efetuar Venda
+            </Link>
           </div>
         </div>
       </main>
