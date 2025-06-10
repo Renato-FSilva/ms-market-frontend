@@ -63,6 +63,7 @@ header {
 }
 
 .btn-edit,
+.btn-discount,
 .btn-delete {
   min-width: 90px;      /* largura mínima igual para ambos */
   height: 38px;         /* altura igual para ambos */
@@ -179,6 +180,22 @@ footer {
   cursor: pointer;
   transition: background 0.2s;
   text-decoration: none;
+}
+
+.btn-discount {
+  background-color: #3581e5 !important;
+  color: #fff !important;
+  border: none;
+  border-radius: 8px;
+  padding: 6px 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s;
+  text-decoration: none;
+}
+.btn-discount:hover,
+.btn-discount:focus {
+  background-color: #1e88e5 !important;
 }
 
 .btn-delete:hover,

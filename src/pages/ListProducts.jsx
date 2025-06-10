@@ -47,6 +47,28 @@ const ProductList = () => {
     }
   };
 
+  const setDiscount = async (id) => {
+    try {
+      const response = await fetch(`http://localhost:5000/api/products/${id}/discount`, {
+        method: "PUT",
+        headers: {
+          Authorization: "Bearer " + localStorage.getItem("token"),
+        },
+      });
+
+        if (response.ok) {
+          alert("Desconto aplicado com sucesso!");
+          loadProducts();
+        } else {
+          alert("Erro ao aplicar desconto.");
+        }
+    }
+    catch (error) {
+      console.error("Erro ao aplicar desconto:", error);
+      alert("Erro ao aplicar desconto.");
+    }
+  };
+
   useEffect(() => {
     loadProducts();
   }, []);
@@ -103,6 +125,12 @@ const ProductList = () => {
                         className="btn-delete"
                       >
                         Excluir
+                      </button>
+                      <button
+                        onClick={() => setDiscount(product.id)}
+                        className="btn-discount"
+                      >
+                        Aplicar Desconto
                       </button>
                     </td>
                   </tr>
